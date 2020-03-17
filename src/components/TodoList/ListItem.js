@@ -21,7 +21,7 @@ const ListItem = (props) => {
               title="Toggle completed"
               onClick={() => {
                 if (typeof props.onToggle === 'function') {
-                  props.onToggle(this.props.data.id, !props.data.is_completed);
+                  props.onToggle(props.data.id, !props.data.is_completed);
                 } else {
                   alert('Action is not provided!');
                 }
