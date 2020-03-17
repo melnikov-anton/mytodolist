@@ -1,0 +1,74 @@
+.SContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 20px;
+  border-bottom: 2px #1CAAF9 solid;
+  box-sizing: border-box;
+  align-items: center;
+  background-color: #EFEFED;
+}
+
+.SField {
+  flex-basis: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.SInput {
+  min-width: 140px;
+  width: 80%;
+  padding: 3px;
+}
+
+.SInput:focus {
+  background-color: yellow;
+}
+
+.SFIcon {
+  margin-left: 7px;
+  cursor: pointer;
+}
+
+.SFilter {
+  flex-basis: 55%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.SFStatus {
+  margin: auto 5px;
+  flex-wrap: nowrap;
+}
+
+.SFSort {
+  margin: auto 5px;
+  flex-wrap: nowrap;
+}
+
+.SText {
+  font-size: 12px;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 520px) {
+  .SContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .SField {
+    flex-basis: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+  .SFilter {
+    flex-basis: 100%;
+    width: 100%;
+    margin-top: 5px;
+    justify-content: center;
+  }
+}
