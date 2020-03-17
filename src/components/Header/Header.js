@@ -1,56 +1,60 @@
-import React, { Component, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import { FaTasks, FaRegUserCircle } from 'react-icons/fa';
 import './Header.css';
+import PropTypes from 'prop-types';
 
 
-export default class Header extends Component {
+const Header = (props) => {
 
+  return(
+    <header className="HContainer">
 
-  render() {
-    return(
-      <header className="HContainer">
+      <div className="HLogo">
+        <span className="HIcon"><FaTasks size={26}/></span>
+        <span className="HTitle">My ToDo List</span>
+      </div>
 
-        <div className="HLogo">
-          <span className="HIcon"><FaTasks size={26}/></span>
-          <span className="HTitle">My ToDo List</span>
-        </div>
-
-        <div className="HNav">
-          {this.props.user ?
+      <div className="HNav">
+        { props.user ?
+          <button className="HBtn"
+          onClick={() => {
+            props.logout()
+          }}>Logout</button>
+          :
+          <Fragment>
             <button className="HBtn"
-            onClick={() => {
-              this.props.logout()
-            }}>Logout</button>
-            :
-            <Fragment>
-              <button className="HBtn"
-                onClick={()=> {
-                  this.props.showLoginForm();
-                }}
-              >Login</button>
-              <button className="HBtn"
-                onClick={() => {
-                  alert('This feature is under construction');
-                }}
-              >Register</button>
-            </Fragment>
-          }
+              onClick={()=> {
+                props.showLoginForm();
+              }}
+            >Login</button>
+            <button className="HBtn"
+              onClick={() => {
+                alert('This feature is under construction');
+              }}
+            >Register</button>
+          </Fragment>
+        }
+      </div>
 
+      <div className="HUserSection">
+        <span className="HUserIcon"><FaRegUserCircle size={20} /></span>
+        <span className="HUser">User:</span>
+        <span
+          className="HUserName"
+          title={props.user ? props.user.email : null}
+        >
+          {props.user ? 'AuthUser' : 'Anonymous'}
+        </span>
+      </div>
 
-        </div>
-
-        <div className="HUserSection">
-          <span className="HUserIcon"><FaRegUserCircle size={20} /></span>
-          <span className="HUser">User:</span>
-          <span
-            className="HUserName"
-            title={this.props.user ? this.props.user.email : null}
-          >
-            {this.props.user ? 'AuthUser' : 'Anonymous'}
-          </span>
-        </div>
-
-      </header>
-    );
-  }
+    </header>
+  );
 }
+
+Header.propTypes = {
+  user: PropTypes.object,
+  logout: PropTypes.func,
+  showLoginForm: PropTypes.func
+};
+
+export default Header;
