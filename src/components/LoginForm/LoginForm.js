@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './LoginForm.css';
 import PropTypes from 'prop-types';
 
-export default class LoginForm extends Component {
+class LoginForm extends Component {
 
   state = {
     message: this.props.message,
@@ -15,6 +15,10 @@ export default class LoginForm extends Component {
     message: 'Please enter your credentials.',
   }
 
+  validateEmail = (email) => {
+    const reg = /\S+@\S+\.\S+/;
+    return reg.test(email);
+  }
 
   handleClickOnLogin = (e) => {
     e.preventDefault();
@@ -23,6 +27,8 @@ export default class LoginForm extends Component {
 
     if (email==='' || password==='') {
       this.props.showLFErrorMessage('Enter all credentials!');
+    } else if (!this.validateEmail(email)) {
+      this.props.showLFErrorMessage('Enter correct email!');
     } else {
       this.setState({
         password: ''
@@ -103,3 +109,5 @@ LoginForm.propTypes = {
   hideLoginForm: PropTypes.func.isRequired,
   showLFErrorMessage: PropTypes.func.isRequired
 };
+
+export default LoginForm;
