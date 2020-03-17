@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './AddTodo.css';
 import { FaCaretDown, FaCaretUp } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 
 export default class AddTodo extends Component {
@@ -79,7 +80,6 @@ export default class AddTodo extends Component {
           description: props.todoToEdit.description
         };
       }
-
     }
     return state;
   }
@@ -143,3 +143,14 @@ export default class AddTodo extends Component {
     );
   }
 }
+
+AddTodo.propTypes = {
+  headerTitle: PropTypes.string,
+  buttonTitle: PropTypes.string,
+  errorMessage: PropTypes.string,
+  opened: PropTypes.bool,
+  showErrorMessage: PropTypes.func,
+  updateTodo: PropTypes.func,
+  addTodo: PropTypes.func.isRequired,
+  todoToEdit: PropTypes.object
+};
