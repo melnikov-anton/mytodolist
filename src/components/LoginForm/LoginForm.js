@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import './LoginForm.css';
+import PropTypes from 'prop-types';
 
-export default class Content extends Component {
+export default class LoginForm extends Component {
 
   state = {
     message: this.props.message,
@@ -93,5 +94,12 @@ export default class Content extends Component {
       </div>
     );
   }
+};
 
+LoginForm.propTypes = {
+  display: PropTypes.bool,
+  errorMsg: PropTypes.string,
+  login: PropTypes.func.isRequired,
+  hideLoginForm: PropTypes.func.isRequired,
+  showLFErrorMessage: PropTypes.func.isRequired
 };
