@@ -1,0 +1,19 @@
+html, body {
+  height: 100%;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  background-color: lightgray;
+}
+#root {
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  background-color: white;
+  overflow: scroll;
+}
+
+#root .pleaseLogin {
+  text-align: center;
+}
