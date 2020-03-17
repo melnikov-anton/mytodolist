@@ -1,0 +1,86 @@
+.LFContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  overflow-y: scroll;
+}
+
+.loginForm {
+  position: relative;
+  width: 30%;
+  min-width: 200px;
+  background-color: #EAEAEA;
+  z-index: 2;
+  padding: 30px;
+  margin-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid #FC9700 2px;
+  border-radius: 10px;
+}
+
+.loginForm form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loginForm input {
+  box-sizing: border-box;
+  margin-top: 1.5em;
+  font-size: 15px;
+  width: 100%;
+  height: 2.2em;
+}
+
+.loginForm input:focus {
+  background-color: yellow;
+}
+
+.loginFormHeader {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.loginBtn {
+  height: 2.5em;
+  width: 100%;
+  margin-top: 1.5em;
+  font-size: 15px;
+  background-color: #1CAAF9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+.loginBtn:hover {
+  background-color: royalblue;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 0;
+  right: 12px;
+  color: dimgrey;
+  /*float: right;*/
+  font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+  color: black;
+  cursor: pointer;
+}
+
+.errorMessage {
+  text-align: center;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
