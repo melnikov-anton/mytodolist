@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Search.css';
 import { FaUndo } from 'react-icons/fa';
+import PropTypes from 'prop-types';
 
 
 class Search extends Component {
@@ -103,7 +104,14 @@ class Search extends Component {
       </div>
     );
   }
-
 }
+
+Search.propTypes = {
+  status: PropTypes.arrayOf(PropTypes.object),
+  sort: PropTypes.arrayOf(PropTypes.object),
+  setSort: PropTypes.func,
+  setFilter: PropTypes.func,
+  searchData: PropTypes.func
+};
 
 export default Search;
