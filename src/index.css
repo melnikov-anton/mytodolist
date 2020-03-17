@@ -5,6 +5,7 @@ html, body {
   margin-right: auto;
   margin-top: 0;
   background-color: lightgray;
+  font-family: 'Helvetica','Arial', sans-serif;
 }
 #root {
   height: 100%;
