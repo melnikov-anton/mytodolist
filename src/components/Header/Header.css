@@ -1,0 +1,95 @@
+.HContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
+  min-height: 54px;
+  background-color: #1CAAF9;
+  /*border: solid 1px;*/
+}
+
+.HLogo {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+}
+.HIcon {
+  margin-left: 20px;
+  margin-right: 5px;
+  box-sizing: border-box;
+}
+.HTitle {
+  margin-left: 5px;
+  font-size: 20px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+
+.HNav {
+  flex-basis: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.HUserSection {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.HUserIcon {
+  margin-left: 5px;
+  margin-right: 5px;
+  box-sizing: border-box;
+}
+.HUser {
+  margin-right: 5px;
+  font-weight: 600;
+  box-sizing: border-box;
+}
+.HUserName {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.HBtn {
+  padding: 5px 10px;
+  margin: auto 7px;
+  background-color: #FDA814;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+}
+.HBtn:hover {
+  background-color: coral;
+}
+
+@media screen and (max-width: 400px) {
+  .HContainer {
+    flex-direction: column;
+  }
+
+  .HLogo {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+
+  .HNav {
+    flex-basis: 100%;
+  }
+
+  .HUserSection {
+    flex-basis: 100%;
+    margin-bottom: 5px;
+    margin-top: 10px;
+  }
+}
