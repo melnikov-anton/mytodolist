@@ -17,7 +17,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  /* border:black 1px solid; */
   box-sizing: border-box;
 }
 .LIHead {
@@ -26,9 +25,8 @@
   padding: 7px;
   margin: 0;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   flex-basis: 70%;
-  /* border:black 1px solid; */
   box-sizing: border-box;
 }
 
@@ -36,7 +34,6 @@
   display: flex;
   flex-direction: row;
   flex-basis: 30%;
-  /* border:black 1px solid; */
   box-sizing: border-box;
 }
 
@@ -57,7 +54,6 @@
   padding: 10px;
   font-size: 12px;
   box-sizing: border-box;
-  /* border:black 1px solid; */
 }
 .LIDate p {
   margin: 0;
@@ -68,7 +64,6 @@
   flex-direction: row;
   align-items: center;
   box-sizing: border-box;
-  /* border:black 1px solid; */
 }
 
 .LIToggle {
@@ -77,7 +72,6 @@
   margin-right: 8px;
   cursor: pointer;
   box-sizing: border-box;
-  /* border:black 1px solid; */
 }
 
 .LIEdit {
@@ -86,7 +80,6 @@
   margin-right: 8px;
   cursor: pointer;
   box-sizing: border-box;
-  /* border:black 1px solid; */
 }
 
 .LIDelete {
@@ -96,7 +89,6 @@
   cursor: pointer;
   color: red;
   box-sizing: border-box;
-  /* border:black 1px solid; */
 }
 
 @media screen and (max-width: 400px) {
