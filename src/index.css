@@ -16,5 +16,14 @@ html, body {
 }
 
 #root .pleaseLogin {
+  width: 50%;
+  margin: 40px auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 1px green solid;
+  border-radius: 10px;
   text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: #80C979;
 }
