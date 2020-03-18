@@ -1,0 +1,29 @@
+.FContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  max-width: 960px;
+  width: 100%;
+  min-height: 32px;
+  background-color: #1CAAF9;
+}
+
+.FAppName {
+  font-size: 14px;
+  margin: 2px 15px;
+}
+
+.FDesigned {
+  font-size: 11px;
+  margin: 2px 20px;
+}
+
+@media screen and (max-width: 400px) {
+  .FContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+}

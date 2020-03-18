@@ -4,6 +4,7 @@ import LoginFormContainer from './hoc/LoginFormContainer';
 import TodoListContainer from './hoc/TodoListContainer';
 import AddTodoContainer from './hoc/AddTodoContainer';
 import SearchContainer from './hoc/SearchContainer';
+import Footer from './Footer/Footer';
 import { connect } from 'react-redux';
 import { getUser } from '../redux/actions/userActions';
 
@@ -30,9 +31,9 @@ class App extends Component {
             <TodoListContainer/>
           </Fragment>
           :
-          <h3 className="pleaseLogin">Please login!</h3>
+          <div className="pleaseLogin">Please login!</div>
         }
-
+        <Footer/>
       </Fragment>
     );
   }
@@ -41,7 +42,6 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {
     user: state.userReducers.user,
-    //todos: state.todoReducers.todos,
     displayLogin: state.displayLogin,
     loginFormErrMsg: state.loginFormErrMsg
   }
