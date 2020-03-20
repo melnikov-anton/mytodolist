@@ -1,0 +1,38 @@
+.PUAContainer {
+  position: absolute;
+  top: 35px;
+  left: 0;
+  padding-top: 5px;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
+.PUAAlert {
+  width: 60%;
+  max-width: 900px;
+  min-height: 36px;
+  border-radius: 5px;
+  border-width: 2px;
+  border-style: solid;
+  margin: 5px auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PUAMessage {
+
+}
+
+.pua-success {
+  background-color: #31DB1E;
+  border-color: darkgreen;
+}
+
+.pua-danger {
+  background-color: #FB0006;
+  border-color: #C20915;
+}
