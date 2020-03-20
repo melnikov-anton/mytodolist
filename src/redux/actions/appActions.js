@@ -3,7 +3,8 @@ import {
   HIDE_LOGIN_APP,
   SHOW_LF_ERR_MSG_APP,
   HIDE_LF_ERR_MSG_APP,
-  SHOW_ADD_ERR_MSG_APP
+  SHOW_ADD_ERR_MSG_APP,
+  SHOW_POPUP_APP
 } from './types';
 
 export const showLoginForm = () => {
@@ -35,5 +36,12 @@ export const showAddErrMsg = (msg) => {
   return {
     type: SHOW_ADD_ERR_MSG_APP,
     payload: msg
+  }
+}
+
+export const showPopUp = (message) => {
+  return {
+    type: SHOW_POPUP_APP,
+    payload: message
   }
 }

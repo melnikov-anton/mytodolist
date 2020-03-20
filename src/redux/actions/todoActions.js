@@ -10,10 +10,23 @@ import {
   SHOW_ADD_ERR_MSG_APP,
   SEARCH_TODOS,
   UPDATE_TODO,
-  CLEAR_TODO_TO_EDIT
+  CLEAR_TODO_TO_EDIT,
+  SHOW_POPUP_APP
 } from './types';
 import { firestore } from '../../components/firebase';
 
+const showPopUpMessage = (dispatch, message, period) => {
+  dispatch({
+    type: SHOW_POPUP_APP,
+    payload: message
+  });
+  setTimeout(() => {
+    dispatch({
+      type: SHOW_POPUP_APP,
+      payload: null
+    });
+  }, 1000 * period);
+}
 
 export const addTodo = (data, uid) => {
   const date = Date.now();
@@ -37,7 +50,12 @@ export const addTodo = (data, uid) => {
           type: ADD_TODO,
           payload: res
         });
-
+        showPopUpMessage(dispatch,
+          {
+            text: 'New ToDo successfully added',
+            type: 'success'
+          }, 3
+        );
     })
     .catch( (error) => {
         console.error("Error adding document: ", error.message);
@@ -54,7 +72,6 @@ export const getTodos = (uid=null) => {
     let todos = [];
     firestore.collection("todos")
       .where("ownerID", "==", uid)
-      //.orderBy("created_at", "desc")
       .get()
       .then((snapshot) => {
         snapshot.forEach( (item) => {
@@ -113,9 +130,23 @@ export const toggleTodo = (docId, newState) => {
           docId,
           newState
         }
-      })
+      });
+      showPopUpMessage(dispatch,
+        {
+          text: 'Status was changed successfully',
+          type: 'success'
+        }, 3
+      );
     })
-    .catch((err) => { console.log(err.message) })
+    .catch((err) => {
+      console.log(err.message);
+      showPopUpMessage(dispatch,
+        {
+          text: err.message,
+          type: 'danger'
+        }, 4
+      );
+    })
   }
 }
 
@@ -129,14 +160,27 @@ export const deleteTodo = (docId) => {
           type: DELETE_TODO,
           payload: docId
         });
+        showPopUpMessage(dispatch,
+          {
+            text: 'ToDo was deleted successfully',
+            type: 'success'
+          }, 3
+        );
       })
-      .catch((err) => { console.log(err.message)});
+      .catch((err) => {
+        console.log(err.message);
+        showPopUpMessage(dispatch,
+          {
+            text: err.message,
+            type: 'danger'
+          }, 4
+        );
+      });
   }
 
 }
 
 export const editTodo = (todoData) => {
-  //alert('This feature is under construction');
   return {
     type: EDIT_TODO,
     payload: todoData
@@ -157,8 +201,22 @@ export const updateTodo = (newTodoData) => {
         payload: newTodoData
       });
       dispatch(clearTodoToEdit());
+      showPopUpMessage(dispatch,
+        {
+          text: 'ToDo was updated successfully',
+          type: 'success'
+        }, 3
+      );
     })
-    .catch((err) => { console.log(err.message) })
+    .catch((err) => {
+      console.log(err.message) ;
+      showPopUpMessage(dispatch,
+        {
+          text: err.message,
+          type: 'danger'
+        }, 4
+      );
+    })
   }
 }
 

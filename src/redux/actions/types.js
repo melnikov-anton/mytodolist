@@ -19,3 +19,4 @@ export const HIDE_LOGIN_APP = 'HIDE_LOGIN_APP';
 export const SHOW_LF_ERR_MSG_APP = 'SHOW_LF_ERR_MSG_APP';
 export const HIDE_LF_ERR_MSG_APP = 'HIDE_LF_ERR_MSG_APP';
 export const SHOW_ADD_ERR_MSG_APP = 'SHOW_ADD_ERR_MSG_APP';
+export const SHOW_POPUP_APP = 'SHOW_POPUP_APP';

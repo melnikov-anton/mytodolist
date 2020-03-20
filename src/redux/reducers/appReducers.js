@@ -3,7 +3,8 @@ import {
   HIDE_LOGIN_APP,
   SHOW_LF_ERR_MSG_APP,
   HIDE_LF_ERR_MSG_APP,
-  SHOW_ADD_ERR_MSG_APP
+  SHOW_ADD_ERR_MSG_APP,
+  SHOW_POPUP_APP
 } from '../actions/types';
 
 export default function appReducers(state={}, action) {
@@ -33,6 +34,11 @@ export default function appReducers(state={}, action) {
           ...state,
           addErrMsg: action.payload
         };
+      case SHOW_POPUP_APP:
+        return {
+          ...state,
+          popUpMessage: action.payload
+        }
     default:
       return state;
   }

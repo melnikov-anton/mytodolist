@@ -5,7 +5,7 @@ import TodoListContainer from './hoc/TodoListContainer';
 import AddTodoContainer from './hoc/AddTodoContainer';
 import SearchContainer from './hoc/SearchContainer';
 import Footer from './Footer/Footer';
-import PopUpAlert from './PopUpAlert/PopUpAlert';
+import PopUpAlertContainer from './hoc/PopUpAlertContainer';
 import { connect } from 'react-redux';
 import { getUser } from '../redux/actions/userActions';
 
@@ -35,7 +35,7 @@ class App extends Component {
           <div className="pleaseLogin">Please login!</div>
         }
         <Footer/>
-        <PopUpAlert/>
+        <PopUpAlertContainer/>
       </Fragment>
     );
   }

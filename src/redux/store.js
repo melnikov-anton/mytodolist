@@ -6,7 +6,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 export const initialState = {
   appReducers: {
     displayLogin: false,
-    loginFormErrMsg: null
+    loginFormErrMsg: null,
+    popUpMessage: null
   },
   userReducers: {user: null},
   todoReducers: {
