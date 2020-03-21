@@ -41,7 +41,6 @@ export const addTodo = (data, uid) => {
     .add(newTodo)
     .then( (doc) => {
         const docId = doc.id;
-        console.log("Document written successfully");
         const res = {
           success: true,
           newTodo: {id: docId, ...newTodo}
@@ -52,7 +51,7 @@ export const addTodo = (data, uid) => {
         });
         showPopUpMessage(dispatch,
           {
-            text: 'New ToDo successfully added',
+            text: 'New ToDo was added successfully',
             type: 'success'
           }, 3
         );
